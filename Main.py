@@ -27,7 +27,7 @@ def search_by_language(language, people):
     language = language.lower()
     matching_people = []
     for person in people:
-        # Check if the language is in the person's list of languages
+        # This checks if the language is in the person's list of languages
         if language in [lang.lower() for lang in person["Languages"]]:
             matching_people.append(person["Name"])
     return matching_people
@@ -37,7 +37,7 @@ class SearchableDatabaseApp(QMainWindow):
     def __init__(self, people):
         super().__init__()
         self.setWindowTitle("Searchable Database")
-        self.setGeometry(100, 100, 600, 400)
+        self.setGeometry(200, 200, 600, 400) #First 2 is x & y cor. where is shows on screen. Second 2 is size of window
         self.people = people  # Store the loaded data
 
         # Set up the main layout
@@ -45,33 +45,33 @@ class SearchableDatabaseApp(QMainWindow):
         self.setCentralWidget(central_widget)
         layout = QVBoxLayout(central_widget)
 
-        # Add a label for instructions
+        # Add a label for instructions for searching
         self.label = QLabel("Enter a language to search:")
         layout.addWidget(self.label)
 
-        # Add an input field for the language
+        # Adds a search bar for looking up language
         self.language_input = QLineEdit()
         self.language_input.setPlaceholderText("e.g., Japanese, English, Dutch")
         layout.addWidget(self.language_input)
 
-        # Add a button to perform the search
+        # Search button
         self.search_button = QPushButton("Search")
         self.search_button.clicked.connect(self.perform_search)
         layout.addWidget(self.search_button)
 
-        # Add a text box to display the results
+        # results shown below after clicking 'search'
         self.result_text = QTextEdit()
         self.result_text.setReadOnly(True)
         layout.addWidget(self.result_text)
 
     def perform_search(self):
-        # Get the language from the input field
+        # Get the matching language from the text file
         language = self.language_input.text().strip()
         if not language:
             QMessageBox.warning(self, "Input Error", "Please enter a language.")
             return
 
-        # Perform the search
+        # Performs the search
         matching_people = search_by_language(language, self.people)
 
         # Display the results
@@ -84,7 +84,7 @@ class SearchableDatabaseApp(QMainWindow):
             self.result_text.append(f"No people found who know {language.capitalize()}.")
 
 if __name__ == "__main__":
-    # Load data from the skills.txt file
+    # Loads the data from the skills.txt file
     people = load_data_from_file("skills.txt")
     if not people:
         print("No data loaded. Exiting...")
