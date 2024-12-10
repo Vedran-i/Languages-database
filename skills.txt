@@ -1,0 +1,31 @@
+Name: Language1, Language2, Language3
+Vedran: Japanese, Chinese, Swedish, English, Bosnian
+Neerja: Telugu, English
+Sam: English, Dutch
+Joe: Italian, Greek, Spanish, English, Urdu
+Jane: english, italian
+Hans: German, English, Italian
+Sammy: English, Afrikaans
+Ling: Chinese, English
+Daft Punk: French, English
+Akira: Japanese
+Ahmad: Arabic, English
+Martha: Dutch, English
+Lisa: Dutch, German
+Rick: English, French
+William: German, Swedish
+Joey: English
+Rasmus: German, Arabic
+Eddie: Dutch, English
+Tom: German, Dutch
+Jonathan: Swedish, English
+Zheng: Chinese
+Lee: Chinese
+Simon: Swedish
+Linus: English, Swedish
+Sarah: French, english
+Emir: Bosnian, Arabic
+Satoshi: Japanese, Korean
+Kim: Korean
+Ricardo: Spanish, French
+
