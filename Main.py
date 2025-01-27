@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import (
     QPushButton, QTextEdit, QWidget, QMessageBox
 )
 
-# Function to load data from the skills.txt file
+#Function to load data from the skills.txt file
 def load_data_from_file(file_path):
     people = []
     try:
@@ -22,7 +22,7 @@ def load_data_from_file(file_path):
         sys.exit()
     return people
 
-# Search function
+# Main search function
 def search_by_language(language, people):
     language = language.lower()
     matching_people = []
@@ -45,12 +45,11 @@ class SearchableDatabaseApp(QMainWindow):
         self.setCentralWidget(central_widget)
         layout = QVBoxLayout(central_widget)
 
-        # Add a label for instructions for searching
+        #Label for instructions for searching
         self.label = QLabel("Enter a language to search:")
         layout.addWidget(self.label)
 
-        # Adds a search bar for looking up language
-        self.language_input = QLineEdit()
+        self.language_input = QLineEdit() # Adds a search bar for looking up language
         self.language_input.setPlaceholderText("e.g., Japanese, English, Dutch")
         layout.addWidget(self.language_input)
 
